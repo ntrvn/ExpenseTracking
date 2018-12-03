@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="695.0" style="-fx-background-color: #31302b;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.dashboardController">
+    <children>
+        <Pane layoutX="35.0" layoutY="75.0" prefHeight="344.0" prefWidth="343.0" style="-fx-background-color: #29BB9C#29BB9C;">
+            <children>
+                <PieChart prefHeight="344.0" prefWidth="343.0" />
+            </children>
+        </Pane>
+        <TableView layoutX="422.0" layoutY="124.0" prefHeight="247.0" prefWidth="241.0">
+            <columns>
+                <TableColumn prefWidth="153.0" text="Category " />
+                <TableColumn prefWidth="87.0" text="Percentage" />
+            </columns>
+        </TableView>
+        <Button layoutX="593.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #29BB9C;" text="Profile" textFill="WHITE" />
+        <Button layoutX="441.0" layoutY="14.0" mnemonicParsing="false" opacity="0.88" prefHeight="27.0" prefWidth="137.0" style="-fx-background-color: #29BB9C;" text="Add New Expense" textFill="WHITE" />
+    </children>
+</Pane>
