@@ -20,6 +20,6 @@
             </columns>
         </TableView>
         <Button layoutX="593.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #29BB9C;" text="Profile" textFill="WHITE" />
-        <Button layoutX="441.0" layoutY="14.0" mnemonicParsing="false" opacity="0.88" prefHeight="27.0" prefWidth="137.0" style="-fx-background-color: #29BB9C;" text="Add New Expense" textFill="WHITE" />
+        <Button fx:id="add" onAction="#addExpense" layoutX="441.0" layoutY="14.0" mnemonicParsing="false" opacity="0.88" prefHeight="27.0" prefWidth="137.0" style="-fx-background-color: #29BB9C;" text="Add New Expense" textFill="WHITE" />
     </children>
 </Pane>
