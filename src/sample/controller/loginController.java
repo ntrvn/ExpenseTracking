@@ -12,17 +12,53 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.model.User;
 
 public class loginController implements Initializable {
     @FXML
     private Button login;
 
+    @FXML
+    private Button register;
+
+    @FXML
+    private TextField username;
+
+    @FXML
+    private PasswordField password;
+
     @FXML private void userLogin(ActionEvent e) {
         Stage stage;
         Parent root;
+        User user = User.getUser(username.getText());
+        if (user.getName().equals("")) {
+            System.out.println("User is not in database");
+        } else {
+            if (user.getPassword().equals(password.getText())) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(new File("src/sample/view/dashboard.fxml").toURI().toURL());
+                    root = loader.load();
+                    stage = (Stage) login.getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException ie) {
+                    System.out.println(ie.getMessage());
+                }
+            } else {
+                System.out.println("Incorrect Password");
+            }
+        }
+    }
+
+    @FXML private void register(ActionEvent e) {
+        Stage stage;
+        Parent root;
         try {
-            FXMLLoader loader = new FXMLLoader(new File("src/sample/view/dashboard.fxml").toURI().toURL());
+            FXMLLoader loader = new FXMLLoader(new File("src/sample/view/register.fxml").toURI().toURL());
             root = loader.load();
             stage = (Stage) login.getScene().getWindow();
             Scene scene = new Scene(root);
