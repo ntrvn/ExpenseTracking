@@ -10,7 +10,7 @@ public class SQLConnection {
     private static final String SCHEMA = "expense-tracking";
     private static final String TEST_SCHEMA = "";
     private static final String USER = "root";
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "Youaremine2303!";
 
     private Connection connection = null;
     private ResultSet results = null;

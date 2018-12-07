@@ -1,5 +1,6 @@
 package sample.model;
 
+import sample.Main;
 import sample.dataConnection.SQLConnection;
 
 import java.sql.PreparedStatement;
@@ -70,6 +71,7 @@ public class User {
                 u.setName(results.getString(2));
                 u.setPassword(results.getString(3));
                 u.setIncome(results.getInt(4));
+                Main.userID = results.getInt(1);
             }
         }
         catch (SQLException e) {

@@ -5,21 +5,29 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
-
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="695.0" style="-fx-background-color: #31302b;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.dashboardController">
     <children>
-        <Pane layoutX="35.0" layoutY="75.0" prefHeight="344.0" prefWidth="343.0" style="-fx-background-color: #29BB9C#29BB9C;">
+        <AnchorPane layoutX="35.0" layoutY="75.0">
             <children>
-                <PieChart prefHeight="344.0" prefWidth="343.0" />
+                <PieChart fx:id="chart" onMouseEntered="#showPercentage"/>
+                <Label fx:id="caption" />
             </children>
-        </Pane>
-        <TableView layoutX="422.0" layoutY="124.0" prefHeight="247.0" prefWidth="241.0">
+        </AnchorPane>
+        <TableView fx:id="table" layoutX="422.0" layoutY="124.0" prefHeight="247.0" prefWidth="241.0">
             <columns>
-                <TableColumn prefWidth="153.0" text="Category " />
-                <TableColumn prefWidth="87.0" text="Percentage" />
+                <TableColumn prefWidth="153.0" text="Category " fx:id="type"/>
+                <TableColumn prefWidth="87.0" text="Amount" fx:id="amount"/>
             </columns>
         </TableView>
         <Button layoutX="593.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #29BB9C;" text="Profile" textFill="WHITE" />
         <Button fx:id="add" onAction="#addExpense" layoutX="441.0" layoutY="14.0" mnemonicParsing="false" opacity="0.88" prefHeight="27.0" prefWidth="137.0" style="-fx-background-color: #29BB9C;" text="Add New Expense" textFill="WHITE" />
+        <Label layoutX="35.0" layoutY="-2.0" prefHeight="59.0" prefWidth="269.0" text="EXPENSE TRACKING" textFill="WHITE">
+            <font>
+                <Font name="Arial Bold" size="26.0" />
+            </font>
+        </Label>
     </children>
 </Pane>

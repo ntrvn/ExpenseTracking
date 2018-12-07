@@ -5,10 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+import sample.Main;
+import sample.model.Expense;
 import sample.model.User;
 
 import java.io.File;
@@ -27,11 +28,53 @@ public class addExpenseController implements Initializable {
     @FXML
     private TextField amount;
 
+    @FXML
+    private Button back;
+
     // I'm still working on this
     @FXML private void addExpense(ActionEvent e) {
         String val = box.getSelectionModel().getSelectedItem();
         System.out.println(val);
         System.out.println(amount.getText());
+        System.out.println(Main.userID);
+        String para = "";
+        if (!val.equals("null") && !amount.getText().equals("")) {
+            if (val.equals("Rent")) {
+                para = "rent";
+            } else if (val.equals("Utilities")) {
+                para = "utilities";
+            } else if (val.equals("Grocery")) {
+                para = "groceries";
+            } else if (val.equals("Eating Out")) {
+                para = "`eating-out`";
+            } else if (val.equals("Going Out")) {
+                para = "`going-out`";
+            } else if (val.equals("Gas")) {
+                para = "gas";
+            } else {
+                para = "`coffee-tea`";
+            }
+            Expense expense = new Expense();
+            expense.updateExpense(para,Integer.parseInt(amount.getText()));
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Expense Added!", ButtonType.OK);
+            alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+            alert.show();
+        }
+    }
+
+    @FXML private void backToDashboard(ActionEvent e) {
+        Stage stage;
+        Parent root;
+        try {
+            FXMLLoader loader = new FXMLLoader(new File("src/sample/view/dashboard.fxml").toURI().toURL());
+            root = loader.load();
+            stage = (Stage) this.back.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ie) {
+            System.out.println(ie.getMessage());
+        }
     }
 
     @Override

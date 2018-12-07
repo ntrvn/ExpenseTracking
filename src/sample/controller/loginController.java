@@ -11,9 +11,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import sample.model.User;
 
@@ -41,6 +40,9 @@ public class loginController implements Initializable {
 
         // verify user input against data from database
         if (user.getName().equals("")) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "User is not in database", ButtonType.OK);
+            alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+            alert.show();
             System.out.println("User is not in database");
         } else {
             if (user.getPassword().equals(password.getText())) {
@@ -55,7 +57,9 @@ public class loginController implements Initializable {
                     System.out.println(ie.getMessage());
                 }
             } else {
-                System.out.println("Incorrect Password");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Wrong password, Please try again!", ButtonType.OK);
+                alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+                alert.show();
             }
         }
     }

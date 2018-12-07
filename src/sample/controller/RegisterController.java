@@ -6,10 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+import sample.Main;
+import sample.model.Expense;
 import sample.model.User;
 
 import java.io.File;
@@ -38,6 +39,12 @@ public class RegisterController implements Initializable {
         User user = new User(usernameR.getText(), passwordR.getText(), Integer.parseInt(income.getText()));
         // add new user to database
         user.insertToDatabase();
+        User temp = User.getUser(usernameR.getText());
+        Expense newTable = new Expense();
+        newTable.insertToDatabase(Main.userID);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Your Account is created!", ButtonType.OK);
+        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+        alert.show();
         // back to login to login
         Stage stage;
         Parent root;

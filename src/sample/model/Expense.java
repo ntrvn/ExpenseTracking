@@ -1,5 +1,6 @@
 package sample.model;
 
+import sample.Main;
 import sample.dataConnection.SQLConnection;
 
 import java.sql.PreparedStatement;
@@ -34,12 +35,34 @@ public class Expense {
 
     }
 
+    public int insertToDatabase(int id) {
+        int errorCode = 0;
+        SQLConnection sql = new SQLConnection();
+        try {
+            PreparedStatement statement = sql.prepareStatement("insert into expense(rent,utilities,groceries,`eating-out`,`going-out`,gas,`coffee-tea`,`user-id`) value (0,0,0,0,0,0,0,?);");
+
+            statement.setInt(1, id);
+            sql.setStatement(statement);
+            sql.executeUpdate();
+        } catch (SQLIntegrityConstraintViolationException scve) {
+            errorCode = 2;
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+            errorCode = 3;
+        } finally {
+            sql.close();
+        }
+
+        return errorCode;
+    }
+
     public void updateExpense(String category, int amount) {
         SQLConnection sql = new SQLConnection();
         try {
             PreparedStatement statement = sql.prepareStatement("update expense " +
                     "set " + category +  " = " + category + " + " + amount +
-                    "where `user-id` = 4;");
+                    " where `user-id`=?;");
+            statement.setInt(1, Main.userID);
             sql.setStatement(statement);
             sql.executeUpdate();
         } catch (SQLIntegrityConstraintViolationException scve) {
@@ -50,13 +73,14 @@ public class Expense {
         }
     }
 
-    public void getExpense() {
+    public Expense getExpense() {
         SQLConnection sql = new SQLConnection();
         Expense e = new Expense();
         try {
             PreparedStatement statement = sql.prepareStatement(
-                    "SELECT * FROM expense WHERE `user-id` = 4"
+                    "SELECT * FROM expense WHERE `user-id`=?"
             );
+            statement.setInt(1,Main.userID);
             sql.setStatement(statement);
             sql.executeQuery();
             ResultSet results = sql.getResults();
@@ -76,6 +100,7 @@ public class Expense {
         finally {
             sql.close();
         }
+        return e;
     }
 
     public void setRent(int rent) {
@@ -104,5 +129,47 @@ public class Expense {
 
     public void setCoffeeTea(int coffeeTea) {
         this.coffeeTea = coffeeTea;
+    }
+
+
+    public int getRent() {
+        return rent;
+    }
+
+    public int getUtilities() {
+        return utilities;
+    }
+
+    public int getGroceries() {
+        return groceries;
+    }
+
+    public int getEatingOut() {
+        return eatingOut;
+    }
+
+    public int getGoingOut() {
+        return goingOut;
+    }
+
+    public int getGas() {
+        return gas;
+    }
+
+    public int getCoffeeTea() {
+        return coffeeTea;
+    }
+
+    @Override
+    public String toString() {
+        return "Expense{" +
+                "rent=" + rent +
+                ", utilities=" + utilities +
+                ", groceries=" + groceries +
+                ", eatingOut=" + eatingOut +
+                ", goingOut=" + goingOut +
+                ", gas=" + gas +
+                ", coffeeTea=" + coffeeTea +
+                '}';
     }
 }
