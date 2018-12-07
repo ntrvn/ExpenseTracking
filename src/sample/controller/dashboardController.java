@@ -71,8 +71,8 @@ public class dashboardController implements Initializable {
         }
     }
 
-
-
+    // event handling when hover over the pie chart
+    // show percentage of the data
     @FXML private void showPercentage(MouseEvent e) {
 
         for (final PieChart.Data data : chart.getData()) {
@@ -88,6 +88,7 @@ public class dashboardController implements Initializable {
         }
     }
 
+    // focus on the correct row in tableview when hover over pie chart
     private void focusRow(String name) {
         if (name.equals("Rent")) {
             table.requestFocus();
@@ -113,21 +114,23 @@ public class dashboardController implements Initializable {
         }
     }
 
+    // calculate the total expense
     private int calculateTotal(Expense e) {
         return e.getRent() + e.getUtilities() + e.getGroceries() + e.getEatingOut() + e.getGoingOut() + e.getGas() + e.getCoffeeTea();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // styling on caption
         caption.setTextFill(Color.WHITE);
         caption.setStyle("-fx-font: 15 arial;");
 
+        // get user's expense from db
         Expense e = new Expense();
         e = e.getExpense();
         this.total = this.calculateTotal(e);
-        System.out.println(e.toString());
 
-
+        // observable list for PieChart
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
                 new PieChart.Data("Rent", e.getRent()),
                 new PieChart.Data("Utilities", e.getUtilities()),
@@ -136,11 +139,13 @@ public class dashboardController implements Initializable {
                 new PieChart.Data("Going Out", e.getGoingOut()),
                 new PieChart.Data("Gas", e.getGas()),
                 new PieChart.Data("Coffee Shop", e.getCoffeeTea()));
+        // setting for pie chart
         chart.setData(pieChartData);
         chart.setPrefSize(343,343);
         chart.setLabelsVisible(false);
         chart.setLegendSide(Side.LEFT);
 
+        // setting up for tableview
         type.setCellValueFactory(new PropertyValueFactory<TableViewProps, String>("type"));
         amount.setCellValueFactory(new PropertyValueFactory<TableViewProps, String>("amount"));
         List<TableViewProps> list = new ArrayList<>();

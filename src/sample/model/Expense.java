@@ -35,12 +35,13 @@ public class Expense {
 
     }
 
+    // When new user created, create new data row in expense table for that user
     public int insertToDatabase(int id) {
         int errorCode = 0;
         SQLConnection sql = new SQLConnection();
         try {
             PreparedStatement statement = sql.prepareStatement("insert into expense(rent,utilities,groceries,`eating-out`,`going-out`,gas,`coffee-tea`,`user-id`) value (0,0,0,0,0,0,0,?);");
-
+            // the id is come from user table
             statement.setInt(1, id);
             sql.setStatement(statement);
             sql.executeUpdate();
@@ -56,6 +57,7 @@ public class Expense {
         return errorCode;
     }
 
+    // update new expense when user insert new expense
     public void updateExpense(String category, int amount) {
         SQLConnection sql = new SQLConnection();
         try {
@@ -73,6 +75,7 @@ public class Expense {
         }
     }
 
+    // get all expense of a user
     public Expense getExpense() {
         SQLConnection sql = new SQLConnection();
         Expense e = new Expense();
@@ -103,6 +106,7 @@ public class Expense {
         return e;
     }
 
+    // setter and getter
     public void setRent(int rent) {
         this.rent = rent;
     }

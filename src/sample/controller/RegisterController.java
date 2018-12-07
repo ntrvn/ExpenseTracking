@@ -42,9 +42,6 @@ public class RegisterController implements Initializable {
         User temp = User.getUser(usernameR.getText());
         Expense newTable = new Expense();
         newTable.insertToDatabase(Main.userID);
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "Your Account is created!", ButtonType.OK);
-        alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-        alert.show();
         // back to login to login
         Stage stage;
         Parent root;

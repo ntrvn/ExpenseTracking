@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 import sample.Main;
 import sample.model.Expense;
 import sample.model.User;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -31,13 +30,11 @@ public class addExpenseController implements Initializable {
     @FXML
     private Button back;
 
-    // I'm still working on this
+    // Handle when user try to add new expense
     @FXML private void addExpense(ActionEvent e) {
         String val = box.getSelectionModel().getSelectedItem();
-        System.out.println(val);
-        System.out.println(amount.getText());
-        System.out.println(Main.userID);
         String para = "";
+        // base on what category user picked, give appropriate parameter for the database
         if (!val.equals("null") && !amount.getText().equals("")) {
             if (val.equals("Rent")) {
                 para = "rent";
@@ -54,14 +51,17 @@ public class addExpenseController implements Initializable {
             } else {
                 para = "`coffee-tea`";
             }
+            // update expense to database
             Expense expense = new Expense();
             expense.updateExpense(para,Integer.parseInt(amount.getText()));
+            // alert to let user know that new expense is updated
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Expense Added!", ButtonType.OK);
             alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
             alert.show();
         }
     }
 
+    // back to dashboard
     @FXML private void backToDashboard(ActionEvent e) {
         Stage stage;
         Parent root;

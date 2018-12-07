@@ -2,6 +2,7 @@ package sample.model;
 
 import javafx.beans.property.SimpleStringProperty;
 
+// this class is used to work with TableView
 public class TableViewProps {
     private final SimpleStringProperty type;
     private final SimpleStringProperty amount;
