@@ -41,6 +41,9 @@ public class dashboardController implements Initializable {
     private Button add;
 
     @FXML
+    private Button back;
+
+    @FXML
     private PieChart chart;
 
     @FXML
@@ -63,6 +66,21 @@ public class dashboardController implements Initializable {
             FXMLLoader loader = new FXMLLoader(new File("src/sample/view/addExpense.fxml").toURI().toURL());
             root = loader.load();
             stage = (Stage) add.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ie) {
+            System.out.println(ie.getMessage());
+        }
+    }
+
+    @FXML private void logOut() {
+        Stage stage;
+        Parent root;
+        try {
+            FXMLLoader loader = new FXMLLoader(new File("src/sample/view/login.fxml").toURI().toURL());
+            root = loader.load();
+            stage = (Stage) this.back.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();

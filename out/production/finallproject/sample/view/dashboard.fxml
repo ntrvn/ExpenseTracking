@@ -22,7 +22,7 @@
                 <TableColumn prefWidth="87.0" text="Amount" fx:id="amount"/>
             </columns>
         </TableView>
-        <Button layoutX="593.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #29BB9C;" text="Profile" textFill="WHITE" />
+        <Button fx:id="back" onAction="#logOut" layoutX="593.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="70.0" style="-fx-background-color: #29BB9C;" text="Log Out" textFill="WHITE" />
         <Button fx:id="add" onAction="#addExpense" layoutX="441.0" layoutY="14.0" mnemonicParsing="false" opacity="0.88" prefHeight="27.0" prefWidth="137.0" style="-fx-background-color: #29BB9C;" text="Add New Expense" textFill="WHITE" />
         <Label layoutX="35.0" layoutY="-2.0" prefHeight="59.0" prefWidth="269.0" text="EXPENSE TRACKING" textFill="WHITE">
             <font>

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/sample/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/controller/addExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controller/addExpenseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/controller/dashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controller/dashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/dataConnection/SQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/dataConnection/SQLConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/model/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/model/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/model/TableViewProps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/model/TableViewProps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/view/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/view/dashboard.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,13 +69,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="9" />
-          <entry key="java" value="20" />
+          <entry key="java" value="21" />
           <entry key="properties" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="20" />
+          <entry key="JAVA" value="21" />
           <entry key="Properties" value="1" />
           <entry key="XML" value="9" />
         </counts>
@@ -87,17 +83,17 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="13" />
-          <entry key="fxml" value="748" />
-          <entry key="java" value="8578" />
+          <entry key="fxml" value="773" />
+          <entry key="java" value="8647" />
           <entry key="properties" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8578" />
+          <entry key="JAVA" value="8647" />
           <entry key="PLAIN_TEXT" value="13" />
           <entry key="Properties" value="16" />
-          <entry key="XML" value="748" />
+          <entry key="XML" value="773" />
         </counts>
       </usages-collector>
     </session>
@@ -132,8 +128,8 @@
         <entry file="file://$PROJECT_DIR$/src/sample/view/dashboard.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="301">
+              <caret line="24" column="190" selection-start-line="24" selection-start-column="190" selection-end-line="24" selection-end-column="190" />
             </state>
           </provider>
         </entry>
@@ -207,22 +203,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/model/TableViewProps.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/controller/dashboardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+            <state relative-caret-position="321">
+              <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/controller/loginController.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/model/TableViewProps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-377">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="76">
+              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -263,13 +259,13 @@
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/model/User.java" />
         <option value="$PROJECT_DIR$/src/sample/view/addExpense.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/view/dashboard.fxml" />
         <option value="$PROJECT_DIR$/src/sample/controller/loginController.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Expense.java" />
         <option value="$PROJECT_DIR$/src/sample/controller/addExpenseController.java" />
-        <option value="$PROJECT_DIR$/src/sample/controller/dashboardController.java" />
         <option value="$PROJECT_DIR$/src/sample/controller/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/sample/model/TableViewProps.java" />
+        <option value="$PROJECT_DIR$/src/sample/view/dashboard.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/controller/dashboardController.java" />
         <option value="$PROJECT_DIR$/src/sample/dataConnection/SQLConnection.java" />
       </list>
     </option>
@@ -366,7 +362,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544178793952" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544179082608" />
     <property name="dynamic.classpath" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -469,12 +465,12 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1543370435724" duration="9299000" />
       <workItem from="1543880841854" duration="11341000" />
-      <workItem from="1544152458376" duration="15526000" />
+      <workItem from="1544152458376" duration="15813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37468000" />
+    <option name="totallyTimeSpent" value="37755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -567,16 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/controller/dashboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/controller/loginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-377">
@@ -646,14 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/view/dashboard.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/view/login.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -667,6 +645,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/view/dashboard.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="24" column="190" selection-start-line="24" selection-start-column="190" selection-end-line="24" selection-end-column="190" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/controller/dashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
