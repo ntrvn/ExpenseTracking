@@ -19,6 +19,7 @@ public class dashboardController implements Initializable {
     @FXML
     private Button add;
 
+    // when user click on addExpense send user to addExpense page
     @FXML private void addExpense(ActionEvent e) {
         Stage stage;
         Parent root;

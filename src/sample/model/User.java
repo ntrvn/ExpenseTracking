@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 
+// this model class is to deal with user, get user info from database
+// add new user, update user
+
 public class User {
 
     private String name;
@@ -25,6 +28,7 @@ public class User {
         this.income = 0;
     }
 
+    // insert user to database
     public int insertToDatabase() {
         int errorCode = 0;
         SQLConnection sql = new SQLConnection();
@@ -50,6 +54,7 @@ public class User {
         return errorCode;
     }
 
+    // get user info from database
     public static User getUser(String name) {
         User u = new User();
         SQLConnection sql = new SQLConnection();
@@ -78,6 +83,8 @@ public class User {
         return u;
     }
 
+
+    // setters and getters
     public void setName(String name) {
         this.name = name;
     }

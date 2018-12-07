@@ -27,7 +27,7 @@ public class addExpenseController implements Initializable {
     @FXML
     private TextField amount;
 
-
+    // I'm still working on this
     @FXML private void addExpense(ActionEvent e) {
         String val = box.getSelectionModel().getSelectedItem();
         System.out.println(val);

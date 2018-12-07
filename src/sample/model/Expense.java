@@ -7,6 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 
+// this expense model is to dealing with expense, add new expense to database
+// get expense from database, and update expense
+// I'm still working on this
+
 public class Expense {
     private int rent;
     private int utilities;
@@ -66,9 +70,8 @@ public class Expense {
                 e.setCoffeeTea(results.getInt(8));
             }
         }
-        catch (SQLException e) {
-            e.printStackTrace();
-            u = null;
+        catch (SQLException eee) {
+            eee.printStackTrace();
         }
         finally {
             sql.close();

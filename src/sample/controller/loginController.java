@@ -30,10 +30,16 @@ public class loginController implements Initializable {
     @FXML
     private PasswordField password;
 
+
+    // when user click on log in
+    // verify user input against database and then send user to dashboard page
     @FXML private void userLogin(ActionEvent e) {
         Stage stage;
         Parent root;
+        // get data from database
         User user = User.getUser(username.getText());
+
+        // verify user input against data from database
         if (user.getName().equals("")) {
             System.out.println("User is not in database");
         } else {
@@ -54,6 +60,8 @@ public class loginController implements Initializable {
         }
     }
 
+
+    // When user click on register, will send to register page
     @FXML private void register(ActionEvent e) {
         Stage stage;
         Parent root;

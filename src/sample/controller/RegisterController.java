@@ -31,9 +31,12 @@ public class RegisterController implements Initializable {
     @FXML
     private Button register;
 
+    // when user click on register
+    // add new user to database
     @FXML private void register(ActionEvent e) {
         // create new user
         User user = new User(usernameR.getText(), passwordR.getText(), Integer.parseInt(income.getText()));
+        // add new user to database
         user.insertToDatabase();
         // back to login to login
         Stage stage;
